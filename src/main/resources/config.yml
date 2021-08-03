@@ -1,12 +1,12 @@
-# Checkintervall in seconds
+# Check interval in seconds
 checkinterval:
   online: 10
   offline: 30
-# Pingtimeout in millisenconds.
+# Ping timeout in milliseconds.
 # Increase that if you experience a server going down and up again without actually restarting it
-pingtimeout: 500
+pingtimeout: 600
 messages:
-  preventswitch: "&cYou can't join &e%server%&c! The server is offline!"
+  preventswitch: "&e%server%&c is currently offline!"
   info:
     online: "&e%server% &ais now online!"
     offline: "&e%server% &cis now offline!"

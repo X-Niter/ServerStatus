@@ -1,6 +1,7 @@
 package de.themoep.serverstatus;
 
 import net.md_5.bungee.api.ChatColor;
+import net.md_5.bungee.api.chat.TextComponent;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
 import net.md_5.bungee.api.plugin.Plugin;
 import net.md_5.bungee.config.Configuration;
@@ -84,13 +85,13 @@ public class ServerStatus extends Plugin {
                 hasAllPerm = player.hasPermission(permission);
             }
             if(hasAllPerm) {
-                player.sendMessage(message);
+                player.sendMessage(new TextComponent(message));
             }
         }
     }
 
     public String getMessage(String key) {
-        String msg = getConfig().getString("messages." + key, "");
+        String msg = getConfig().getString("messages." + key, "").replace("\\n","\n");
         if(msg.isEmpty()) {
             return ChatColor.RED + "Unknown language key: " + ChatColor.YELLOW + key;
         } else {
